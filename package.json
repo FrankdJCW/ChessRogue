@@ -1,0 +1,24 @@
+{
+  "name": "autochess",
+  "version": "1.0.0",
+  "description": "Auto Chess Tower Defense Game",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "chess",
+    "game",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "js-chess-engine": "^1.0.2"
+  }
+}

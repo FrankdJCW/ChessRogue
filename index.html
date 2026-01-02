@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Roguelike</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Chess Roguelike</h1>
+            <div class="game-stats">
+                <div class="stat">Games Won: <span id="gamesWon">0</span> / 10</div>
+                <div class="stat">Points: <span id="points">0</span></div>
+                <div class="stat">Current Game: <span id="currentGame">1</span></div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="phase-indicator">
+                    <h2 id="phaseTitle">Placement Phase</h2>
+                    <p id="phaseDescription">Place your pieces on the board</p>
+                    <div class="instructions" style="margin-top: 10px; padding: 10px; background: rgba(102, 126, 234, 0.1); border-radius: 5px; font-size: 12px;">
+                        <strong>How to Play:</strong><br>
+                        <strong>Setup:</strong><br>
+                        • Buy and place pieces from your inventory<br>
+                        • White pawns must be placed on bottom 3 rows<br>
+                        • Cannot place pieces that check either king<br>
+                        • Once placed, pieces are locked (use Reset to clear all)<br>
+                        • Must place your King before starting!<br>
+                        <strong>Battle:</strong><br>
+                        • Click your pieces to move them on your turn<br>
+                        • Capture black pieces to earn points (½ piece value)<br>
+                        • Win: +3 points, Draw: +1 point<br>
+                        <strong>Progression:</strong><br>
+                        • Surviving pieces return to original positions<br>
+                        • Black gets stronger each round (1.5x after wins, 1x after draws)<br>
+                        • Black pieces spawn anywhere (pawns: top 3 rows)<br>
+                        • Win 10 games to achieve victory!
+                    </div>
+                </div>
+
+                <div class="shop-container">
+                    <h3>Shop</h3>
+                    <div class="shop-items" id="shopItems">
+                        <!-- Shop items will be populated by JS -->
+                    </div>
+                </div>
+
+                <div class="inventory-container">
+                    <h3>Your Pieces</h3>
+                    <div class="inventory" id="inventory">
+                        <!-- Inventory will be populated by JS -->
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button id="startGameBtn" class="btn btn-primary">Start Game</button>
+                    <button id="resetPlacementBtn" class="btn btn-secondary">Reset Placement</button>
+                </div>
+            </div>
+
+            <div class="board-container">
+                <canvas id="chessBoard" width="640" height="640"></canvas>
+                <div class="game-log" id="gameLog">
+                    <h3>Game Log</h3>
+                    <div id="logMessages"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dist/js-chess-engine.js"></script>
+    <script type="module" src="dist/main.js"></script>
+</body>
+</html>
+
